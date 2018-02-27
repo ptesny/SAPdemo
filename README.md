@@ -4,10 +4,24 @@ A simple client for the SAP Purchase Order api
 
 ## To use
 
-Build the `api` project:
-
+Example usage:
 ```
-./gradlew api:build
+import purchaseorder.api.PurchaseOrderApi;
+import purchaseorder.entity.PurchaseOrder;
+
+public class Main {
+    public static void main(String[] args) {
+        PurchaseOrderApi api = new PurchaseOrderApi(BASE_API_URL, API_KEY);
+
+        // getPurchaseOrder
+        PurchaseOrder result = api.getPurchaseOrder(4500000001L);
+
+        // createPurchaseOrder
+        // Note: create/update/delete are not supported by the SAP sandbox API, so this is only an example interface
+        PurchaseOrder myPO = new PurchaseOrder();
+        api.createPurchaseOrder(myPO);
+    }
+}
 ```
 
 ## Demo application

@@ -30,9 +30,19 @@ public class PurchaseOrderApi {
         ResponseEntity<PurchaseOrder> respEntity = restTemplate.exchange(requestUrl, HttpMethod.GET, entity, PurchaseOrder.class);
 
 
-        PurchaseOrder resp = respEntity.getBody();
-        return resp;
+        PurchaseOrder po = respEntity.getBody();
+        return po;
+    }
 
+    public void createPurchaseOrder(PurchaseOrder po) {
+
+    }
+
+    public void updatePurchaseOrder(Long id, PurchaseOrder po) {
+
+    }
+
+    public void deletePurchaseOrder(Long id) {
 
     }
 }
